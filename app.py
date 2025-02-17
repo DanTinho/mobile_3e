@@ -1,6 +1,6 @@
 import sys
 import pandas as pd
-from pyQt5.QtWidgets import QApplication, QWidget, QVBoxLayout, QLabel, QLineEdit, QPushButton, QGridLayout, QMessageBox
+from PyQt5.QtWidgets import QApplication, QWidget, QVBoxLayout, QLabel, QLineEdit, QPushButton, QGridLayout, QMessageBox
 from PyQt5.QtCore import Qt
 import smtplib
 from email.mime.text import MIMEText
@@ -33,7 +33,7 @@ class CadastroAlunos(QWidget):
         label_email = QLabel('Email:')
         self.input_email = QLineEdit()
         layout.addWidget(label_email, 2, 0)
-        layout.addWidget(self.input_email, 2, 0)
+        layout.addWidget(self.input_email, 2, 1)
 
         botao_adicionar = QPushButton('Adicionar aluno')
         botao_adicionar.clicked.connect(self.adicionar_aluno)
