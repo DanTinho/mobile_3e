@@ -1,5 +1,6 @@
 import sys
 import pandas as pd
+import openpyxl
 from PyQt5.QtWidgets import QApplication, QWidget, QVBoxLayout, QLabel, QLineEdit, QPushButton, QGridLayout, QMessageBox
 from PyQt5.QtCore import Qt
 import smtplib
@@ -52,12 +53,12 @@ class CadastroAlunos(QWidget):
         email = self.input_email.text()
 
         if nome and turma and email:
-            self.alunos.apped({'Nome': nome, 'Turma': turma, 'Email': email})
-            self.input_nome.clear()
-            self.input_nome.clear()
-            self.input_turma.clear()
+                self.alunos.append({'Nome': nome, 'Turma': turma, 'Email': email})
+                self.input_nome.clear()
+                self.input_turma.clear()
+                self.input_email.clear()
         else:
-            QMessageBox.warning(self, 'Erro', 'Preencha todos os campos!')
+                QMessageBox.warning(self, 'Erro, Preencha todos os campo!')
 
     def cadastrar_e_enviar_emails(self):
         if self.alunos:
